@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Gerador de Senha</string>
+    <string name="titulo">Gerador de Senhas</string>
+    <string name="link_copiar"><u>Copiar</u></string>
+    <string name="aguardando">Aguardando...</string>
+    <string name="txt_gerar">Gerar senha</string>
 </resources>

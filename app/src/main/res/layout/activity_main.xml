@@ -5,15 +5,139 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/escura"
     tools:context=".MainActivity">
 
-    <TextView
+    <View
+        android:id="@+id/fundo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:background="@color/clara"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/cabecalho"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@color/escura"
+        app:layout_constraintTop_toTopOf="@id/main"
+        app:layout_constraintStart_toStartOf="@id/main" />
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/cabecalho"
+        app:layout_constraintEnd_toEndOf="@id/cabecalho"
+        app:layout_constraintStart_toStartOf="@id/cabecalho"
+        app:layout_constraintTop_toTopOf="@id/cabecalho" />
+
+    <View
+        android:id="@+id/fundo_copiar"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/fundo_claro_arredondado"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="@id/main"
+        app:layout_constraintStart_toStartOf="@id/main"
+        app:layout_constraintTop_toBottomOf="@id/cabecalho" />
+
+    <TextView
+        android:id="@+id/senhagerada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:text="@string/aguardando"
+        android:textAllCaps="false"
+        android:textColor="@color/cinza"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/fundo_copiar"
+        app:layout_constraintEnd_toEndOf="@id/fundo_copiar"
+        app:layout_constraintStart_toStartOf="@id/fundo_copiar"
+        app:layout_constraintTop_toTopOf="@+id/fundo_copiar" />
+
+    <TextView
+        android:id="@+id/link_copiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/link_copiar"
+        android:textColor="@color/cinza"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/fundo_copiar" />
+
+    <Button
+        android:id="@+id/btn_gerar"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/txt_gerar"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/escura"
+        app:layout_constraintBottom_toBottomOf="@id/main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Switch
+        android:id="@+id/opt_letras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layoutDirection="rtl"
+        android:switchPadding="10dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:textSize="20sp"
+        android:text="Letras"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/main"
+        app:layout_constraintTop_toBottomOf="@+id/link_copiar"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/opt_numeros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:layoutDirection="rtl"
+        android:switchPadding="10dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="Números"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/main"
+        app:layout_constraintTop_toBottomOf="@+id/opt_letras"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/opt_especiais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/escura"
+        android:layoutDirection="rtl"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:switchPadding="10dp"
+        android:text="Caracteres especiais"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/main"
+        app:layout_constraintTop_toBottomOf="@+id/opt_numeros"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

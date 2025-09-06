@@ -4,4 +4,23 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="Theme.GeradorDeSenha" parent="Base.Theme.GeradorDeSenha" />
+
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Switch</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Switch" parent="">
+        <!-- Track (fundo) -->
+        <item name="colorSurfaceContainerHighest">@color/white</item> <!-- fundo desativado -->
+        <item name="colorPrimary">@color/escura</item> <!-- fundo ativado -->
+
+        <!-- Thumb (bordas e bolinha) -->
+        <item name="colorOutline">@color/escura</item> <!-- borda e bolinha -->
+        <item name="colorOnPrimary">@color/white</item> <!-- bolinha -->
+
+        <!-- Ao ser pressionado -->
+        <!--        <item name="rippleColor">#ff0000</item>-->
+    </style>
 </resources>

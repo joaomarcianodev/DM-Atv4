@@ -5,4 +5,6 @@
     <color name="escura">#09457a</color>
     <color name="clara">#D3D3D3</color>
     <color name="cinza">#a9a8ab</color>
+
+    <color name="colorPrimary">#09457a</color>
 </resources>

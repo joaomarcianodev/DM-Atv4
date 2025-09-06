@@ -41,7 +41,7 @@
 
     <View
         android:id="@+id/fundo_copiar"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/fundo_claro_arredondado"
@@ -52,14 +52,16 @@
 
     <TextView
         android:id="@+id/senhagerada"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
         android:elevation="8dp"
         android:text="@string/aguardando"
-        android:textAllCaps="false"
+        android:textIsSelectable="true"
         android:textColor="@color/cinza"
         android:textSize="15sp"
         android:textStyle="bold"
+        android:fontFamily="monospace"
         app:layout_constraintBottom_toBottomOf="@+id/fundo_copiar"
         app:layout_constraintEnd_toEndOf="@id/fundo_copiar"
         app:layout_constraintStart_toStartOf="@id/fundo_copiar"
@@ -78,66 +80,130 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fundo_copiar" />
 
-    <Button
-        android:id="@+id/btn_gerar"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="50dp"
-        android:text="@string/txt_gerar"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/escura"
-        app:layout_constraintBottom_toBottomOf="@id/main"
+
+    <TextView
+        android:id="@+id/label_tamanho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:text="Tamanho da senha"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/link_copiar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/valor_tamanho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:text="16"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/label_tamanho"
+        app:layout_constraintBottom_toBottomOf="@id/label_tamanho" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/slider_tamanho"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:stepSize="1.0"
+        android:value="16.0"
+        android:valueFrom="8.0"
+        android:valueTo="32.0"
+        app:trackColorInactive="@color/white"
+        app:trackColorActive="@color/escura"
+        app:tickColorInactive="@color/cinza"
+        app:tickColorActive="@color/white"
+        app:thumbColor="@color/escura"
+        app:layout_constraintTop_toBottomOf="@id/label_tamanho"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Switch
-        android:id="@+id/opt_letras"
-        android:layout_width="wrap_content"
+    <com.google.android.material.materialswitch.MaterialSwitch
+        style="@style/Widget.App.Switch"
+        android:id="@+id/opt_minusculas"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layoutDirection="rtl"
-        android:switchPadding="10dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
+        android:layout_marginTop="25dp"
+        android:checked="true"
+        android:enabled="true"
+        android:text="Letras minúsculas"
         android:textSize="20sp"
-        android:text="Letras"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@id/main"
-        app:layout_constraintTop_toBottomOf="@+id/link_copiar"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        app:layout_constraintTop_toBottomOf="@+id/slider_tamanho"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Switch
+    <com.google.android.material.materialswitch.MaterialSwitch
+        style="@style/Widget.App.Switch"
+        android:id="@+id/opt_maiusculas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:checked="false"
+        android:enabled="true"
+        android:text="Letras maiúsculas"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/opt_minusculas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        style="@style/Widget.App.Switch"
         android:id="@+id/opt_numeros"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layoutDirection="rtl"
-        android:switchPadding="10dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
+        android:checked="false"
+        android:enabled="true"
         android:text="Números"
-        android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@id/main"
-        app:layout_constraintTop_toBottomOf="@+id/opt_letras"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/opt_maiusculas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Switch
+    <com.google.android.material.materialswitch.MaterialSwitch
+        style="@style/Widget.App.Switch"
         android:id="@+id/opt_especiais"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:backgroundTint="@color/escura"
-        android:layoutDirection="rtl"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        android:switchPadding="10dp"
+        android:checked="false"
+        android:enabled="true"
         android:text="Caracteres especiais"
-        android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@id/main"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/opt_numeros"
-        tools:ignore="UseSwitchCompatOrMaterialXml" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_gerar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/escura"
+        android:text="@string/txt_gerar"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/main"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opt_especiais" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

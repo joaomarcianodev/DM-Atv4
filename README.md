@@ -13,8 +13,8 @@
 - The application starts with default values, with a password length of 16 and the "Letters" option enabled.  
 - The user can set the password length, between 8 and 32 characters, using the slider.  
 - It is possible to choose which character sets will be part of the password:  
-  - Letters (lowercase)  
-  - Uppercase and lowercase  
+  - Letters lowercase  
+  - Letters uppercase  
   - Numbers  
   - Special characters  
 - The application validates that at least one character set option remains active, preventing the user from disabling all of them.  

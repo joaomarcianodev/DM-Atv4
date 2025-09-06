@@ -2,7 +2,7 @@
 - Discipline: Programming for Mobile Devices
 - Teacher: Junio Moreira
 - Student: João Augusto Marciano Silva
-- Final date: 13/09/2025
+- Final date: 05/09/2025
 
 ## Application operation
 

@@ -24,4 +24,4 @@
 
 ## Download
 
-[APK](https://github.com/joaomarcianodev/DM-Atv4/blob/25b1c02a9d469aaa1a56bc36316d1c7483ed0f7f/app-release.apk)
+[APK](https://github.com/joaomarcianodev/DM-Atv4/blob/f56d15dc576982f74aba46f1cba17df805394065/GeradorDeSenha-v1.0.apk)
